@@ -1,0 +1,191 @@
+/*-----------------------------------------------------------------*/
+
+@font-face {
+	font-family: Lato-Reg;
+	src: url(Font/Lato-Regular.ttf);
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: Lato-Bold;
+	src: url(Font/Lato-Bold.ttf);
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: Lato-Black;
+	src: url(Font/Lato-Black.ttf);
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: Lato-BoldItalic;
+	src: url(Font/Lato-BoldItalic.ttf);
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: Montserrat-Black;
+	src: url(Font/Montserrat-Black.otf);
+	font-weight: normal;
+    font-style: normal;
+}
+
+/*-----------------------------------------------------------------*/
+
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: red;
+}
+
+/*-----------------------------------------------------------------*/
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0);
+	display: block;
+	z-index: 1000;
+}
+
+header img {
+	float: left;
+	width: 120px;
+	margin: 22px 50px;
+}
+
+header nav ul {
+	list-style: none;
+}
+
+header nav ul li {
+	position: relative;
+	float: left;
+}
+
+header nav ul li a {
+	padding: 30px 21px;
+	display: block;
+	color: #f9f9f9;
+	font-size: 16px;
+	font-family: Lato-Bold;
+}
+
+header nav ul li a:hover {
+	background: #f9f9f9;
+	color: #203830;
+}
+
+header nav ul li ul {
+	position: absolute;
+	left: 0;
+	width: 146.5px;
+	background: #f9f9f9;
+	display: none;
+}
+
+header nav ul li ul li {
+	width: 100%;
+}
+
+header nav ul li ul li a {
+	font-family: Lato-Reg;
+	color: #203830;
+	padding: 0 18px;
+	line-height: 40px;
+}
+
+header nav ul li:hover > ul {
+	display: initial;
+}
+
+header nav ul li ul li a:hover {
+	background-color: #203830;
+  	color: #f9f9f9;
+}
+
+#check {
+	display: none;
+}
+
+header label {
+	color: white;
+	cursor: pointer;
+	display: none;
+	font-size: 20px;
+	line-height: 80px;
+	float: right;
+	margin-right: 40px;
+}
+
+header.sticky {
+	background: #203830;
+	transition: .5s;
+}
+
+body .img {
+	width: 100%;
+	margin-top: 1000px;
+}
+
+.first img {
+	width: 100%;
+}
+
+
+@media (max-width: 858px) {
+	header label {
+		display: block;
+	}
+
+	header nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #f9f9f9;
+		border-top: 1px solid rgba(0,0,0,.1);
+		display: none;
+	}
+
+	header nav ul li {
+		width: 100%;
+	}
+
+	header nav ul li a {
+		text-align: center;
+		color: #203830;
+	}
+
+	header nav ul li a:hover {
+		background: #203830;
+		color: #f9f9f9;
+	}
+
+	header nav ul li ul {
+		position: relative;
+		width: 100%;
+	}
+
+	#check:checked ~ nav {
+		display: block;
+	}
+
+	header nav ul li:focus-within > ul {
+		display: initial;
+	}
+
+}
